@@ -31,7 +31,7 @@ const getEmpleadoById = (id, callback) => {
     callback(null, empleado);
     return;
   }
-  callback(new Error('El empleado no existe'));
+  callback(`El empleado con id ${id} no existe`);
 };
 
 const getSueldoById = (id, callback) => {
@@ -41,9 +41,10 @@ const getSueldoById = (id, callback) => {
     callback(null, sueldo);
     return;
   }
+  callback(`El sueldo con el id ${id} no existe`);
 };
 
-const id = 2;
+const id = 5;
 
 getEmpleadoById(id, (error, empleado) => {
   if (error) {
